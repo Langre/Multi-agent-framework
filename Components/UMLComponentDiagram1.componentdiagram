@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="864ae580-0c28-41b3-ae81-8de5a3176f9b" name="UMLComponentDiagram1" linkedPackageId="89f269a7-ddbb-4898-a1f1-f498e6de6994" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="c5b2d8ae-0fa5-476a-a45b-3e34e06b73a7">
+      <profileInstance Id="83b25c1a-57fe-44aa-8158-46a7f7db6d84" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="45e8a493-79fa-4e99-9135-3fa72ed94588">
+      <profileInstance Id="2dc39e0e-0364-45b9-b055-e54cbeb21923" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="e2680809-95ab-438c-ac5d-489caedab662" name="Конструктор агентов" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f3a5056d-2839-4888-a057-f8891cbc16d3" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="2011f161-d47e-4b63-b94d-7f0f795707c7" name="Базовый агент" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="54a78a46-6f0e-4e2b-9545-0a3b87cdd5ca" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="ea80e08e-7526-44b3-8ed9-dc3012ec4e0d" name="Базовое поведение" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f90dcf19-33c5-45c5-b098-4acb68ece726" />
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="89f269a7-ddbb-4898-a1f1-f498e6de6994" name="Components">
+    <elementDefinition Id="0c2db3d5-a880-498d-876c-953a6318323b" />
+  </package>
+</componentModel>

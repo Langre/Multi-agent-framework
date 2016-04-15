@@ -12,12 +12,15 @@ using MAS.Ontology;
 
 namespace MAS.Facilitator
 {
-    class Shelf : AbstractAgent
+    class Shelf : IFacilitator
     {
         /// <summary>
         /// Каталог с видами агентов.
         /// </summary>
         private List<AgentInfo> Catalog; 
-                
+        public void ProvideInfo()
+        {
+
+        }    
     }
 }

@@ -29,6 +29,10 @@ namespace MAS.Facilitator
         /// Списк услуг, которые может выполнить агент.
         /// </summary>
         public List<ServiceInfo> Services { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="AgentName">Идентификатор агента</param>
         public AgentInfo(string AgentName)
         {
             agentName = AgentName;

@@ -152,6 +152,7 @@
     <Compile Include="ACL\Communication.cs" />
     <Compile Include="AgentConstruct\AbstractAgent.cs" />
     <Compile Include="Facilitator\AgentInfo.cs" />
+    <Compile Include="Facilitator\IFacilitator.cs" />
     <Compile Include="Facilitator\ServiceInfo.cs" />
     <Compile Include="Ontology\IndividualStructure.cs" />
     <Compile Include="LocalMSC\DefaultPostman.cs" />

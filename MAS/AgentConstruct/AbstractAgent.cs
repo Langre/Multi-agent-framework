@@ -13,12 +13,13 @@ namespace MAS.AgentConstruct
     
     public abstract class AbstractAgent
     {
+        public string ID;
         /// <summary>
         /// ID агента в системе. 
         /// </summary>   
-        public abstract String GetID { get; }
-        public Dictionary<String, AbstractBehaviour> PoolOfBehaviours; // заменить словарь на гребаное ДЕРЕВО
-        public Dictionary<String, AbstractBehaviour> Behaviours { get { return PoolOfBehaviours; } }
+        public String GetID { get { return ID; } }
+        public List<AbstractBehaviour> poolOfBehaviours; // заменить словарь на гребаное ДЕРЕВО
+        public List<AbstractBehaviour> Behaviours { get { return poolOfBehaviours; } }
 
         /// <summary>
         /// Служба передачи сообщения между агентом и почтой.
@@ -29,11 +30,10 @@ namespace MAS.AgentConstruct
         /// </summary>
         public IServicePostman GetPostman { get { return PersonalPostman; } }
 
-        protected Task execute; //для параллеьной работы агента
-
-        public AbstractAgent() 
+        public AbstractAgent(string ID) 
         {
-            PoolOfBehaviours = new Dictionary<string, AbstractBehaviour>();        
+            this.ID = ID;
+            poolOfBehaviours = new List<AbstractBehaviour>;        
         }        
 
         /// <summary>
@@ -48,20 +48,27 @@ namespace MAS.AgentConstruct
         /// <summary>
         /// Добавляет поведение в дерево поведений.
         /// </summary>
-        /// <param name="ID">Идентефикатор поведения.</param>
         /// <param name="NewB">Поведение.</param>
-        public void AddBehaviour(String ID, AbstractBehaviour NewB)
+        public void AddBehaviour(AbstractBehaviour NewB)
         {
-            PoolOfBehaviours.Add(ID, NewB);
+            try
+            {
+                if (poolOfBehaviours.FindAll(b => b.GetName == NewB.GetName).Count > 0)
+                    poolOfBehaviours.Add(NewB);
+            }
+            catch
+            {                
+                 // сделать обработку  
+            }
         }
 
         /// <summary>
         /// Удаляет поведение из дерева поведений.
         /// </summary>
         /// <param name="ID">Идентефикатор поведения.</param>
-        public void DeleteBehaviour(String ID) 
+        public void DeleteBehaviour(String Name) 
         {
-            PoolOfBehaviours.Remove(ID);
+            poolOfBehaviours.Remove(poolOfBehaviours.Where(b => b.GetName == Name).First());
         }
 
         /// <summary>

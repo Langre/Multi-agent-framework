@@ -7,38 +7,53 @@ using System.Threading.Tasks;
 namespace MAS.AgentConstruct
 {
     public abstract class AbstractBehaviour
-    {
-        /// <summary>
-        /// Идентефикатор поведения.
-        /// </summary>
-        protected String id;
-        /// <summary>
-        /// Значение идентефикатора поведения.
-        /// </summary>
-        public String ID { get { return id; } }
+    {        
+        private String Name;
 
+        /// <summary>
+        /// Название поведения.
+        /// </summary>
+        public String GetName { get { return Name; } }
+        public List<AbstractBehaviour> poolOfBehaviours;
         /// <summary>
         /// Агент-хозяин.
         /// </summary>
         public AbstractAgent Host;
+
         /// <summary>
         /// Возвращает агента-хозяина.
         /// </summary>
         public AbstractAgent GetHost { get { return Host; } }
-
-        protected Task execute; // для параллельнной работы
-
-        public AbstractBehaviour(String ID, AbstractAgent Host)
+        
+        public AbstractBehaviour(String Name, AbstractAgent Host)
         {
-            this.id = ID;
+            this.Name = Name;
             this.Host = Host;
-            execute = new Task(() => JobDoing(), TaskCreationOptions.AttachedToParent);           
+            poolOfBehaviours = new List<AbstractBehaviour>();
         }
+
+        /// <summary>
+        /// Добавляет поведение в дерево поведений.
+        /// </summary>
+        /// <param name="NewB">Поведение.</param>
+        public void AddBehaviour(AbstractBehaviour NewB)
+        {
+            try
+            {
+                if (poolOfBehaviours.FindAll(b => b.GetName == NewB.GetName).Count > 0)
+                    poolOfBehaviours.Add(NewB);
+            }
+            catch
+            {
+                // сделать обработку  
+            }
+        }
+
         /// <summary>
         /// Алгоритм поведения.
         /// </summary>
         /// <returns>Результат выполнения поведения.</returns>
-        public abstract dynamic JobDoing(); 
+        public abstract void DoJob(); 
     }
 }
 
