@@ -157,7 +157,6 @@
     <Compile Include="Ontology\IndividualStructure.cs" />
     <Compile Include="LocalMSC\DefaultPostman.cs" />
     <Compile Include="LocalMSC\IServicePostman.cs" />
-    <Compile Include="AgentConstruct\AgentAttribute.cs" />
     <Compile Include="LocalMSC\IMessageService.cs" />
     <Compile Include="LocalMSC\MType.cs" />
     <Compile Include="LocalMSC\LocalPost.cs" />
@@ -180,7 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

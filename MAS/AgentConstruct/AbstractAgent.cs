@@ -18,7 +18,7 @@ namespace MAS.AgentConstruct
         /// ID агента в системе. 
         /// </summary>   
         public String GetID { get { return ID; } }
-        public List<AbstractBehaviour> poolOfBehaviours; // заменить словарь на гребаное ДЕРЕВО
+        private List<AbstractBehaviour> poolOfBehaviours; // заменить словарь на гребаное ДЕРЕВО
         public List<AbstractBehaviour> Behaviours { get { return poolOfBehaviours; } }
 
         /// <summary>

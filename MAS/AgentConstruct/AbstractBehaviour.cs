@@ -14,7 +14,9 @@ namespace MAS.AgentConstruct
         /// Название поведения.
         /// </summary>
         public String GetName { get { return Name; } }
-        public List<AbstractBehaviour> poolOfBehaviours;
+
+        private List<AbstractBehaviour> poolOfBehaviours;
+        public List<AbstractBehaviour> Behaviours { get { return poolOfBehaviours; } }
         /// <summary>
         /// Агент-хозяин.
         /// </summary>
