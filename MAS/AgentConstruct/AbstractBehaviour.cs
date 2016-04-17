@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace MAS.AgentConstruct
 {
@@ -16,7 +17,7 @@ namespace MAS.AgentConstruct
         public String GetName { get { return Name; } }
 
         private List<AbstractBehaviour> poolOfBehaviours;
-        public List<AbstractBehaviour> Behaviours { get { return poolOfBehaviours; } }
+        public ReadOnlyCollection<AbstractBehaviour> Behaviours { get { return poolOfBehaviours.AsReadOnly(); } }
         /// <summary>
         /// Агент-хозяин.
         /// </summary>

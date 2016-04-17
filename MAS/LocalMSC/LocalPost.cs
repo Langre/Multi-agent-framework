@@ -11,10 +11,6 @@ namespace MAS.LocalMSC
     public class LocalPost : IMessageService
     {
         /// <summary>
-        /// Список подключеннных агентов.
-        /// </summary>
-        private Dictionary<String, AbstractAgent> Users;
-        /// <summary>
         /// Почтовые ящики агентов.
         /// </summary>
         private Dictionary<String, Queue<Message>> Boxes;
@@ -22,7 +18,6 @@ namespace MAS.LocalMSC
 
         private LocalPost()
         {
-            Users = new Dictionary<string, AbstractAgent>();
             Boxes = new Dictionary<string, Queue<Message>>();
         }
 
@@ -37,17 +32,41 @@ namespace MAS.LocalMSC
                     instance = new LocalPost();
             return instance;
         }
-        
-        /// <summary>
-        /// Добавление агента.
-        /// </summary>
-        /// <param name="NewCustomer">Экземпляр агента.</param>
-        public void AddClients(AbstractAgent NewCustomer)
+
+        public void AddClient(AbstractAgent NewCustomer)
         {
-            Users.Add(NewCustomer.GetID, NewCustomer); 
-            NewCustomer.GetPostman.SendLetter += new ToPost<MessageArgs>(IntoBox);
-            NewCustomer.GetPostman.SendQuery += new CheckPost<AdressArgs>(GiveMessage);
-            Boxes.Add(NewCustomer.GetID, new Queue<Message>());
+            try
+            {
+                if (!Boxes.ContainsKey(NewCustomer.GetID))
+                {
+                    Boxes.Add(NewCustomer.GetID, new Queue<Message>());
+                    NewCustomer.GetPostman.SendLetter += new ToPost<MessageArgs>(IntoBox);
+                    NewCustomer.GetPostman.SendQuery += new CheckPost<AdressArgs>(GiveMessage);
+                }
+                else
+                    throw new Exception(); //доработать исключение
+            }
+            catch (Exception alredyExistCatcher)
+            {
+                //сделать обработку
+            }
+        }
+
+        public void AddClients(IEnumerable<AbstractAgent> NewCustomers)
+        {
+            foreach(var newCustomer in NewCustomers)
+                AddClient(newCustomer);
+        }
+
+        public void RemoveClient(string AgentID)
+        {
+            Boxes.Remove(AgentID);
+        }
+
+        public void RemoveClients(IEnumerable<string> AgentsIDs)
+        {
+            foreach (var id in AgentsIDs)
+                RemoveClient(id);
         }
 
         /// <summary>
@@ -55,9 +74,9 @@ namespace MAS.LocalMSC
         /// </summary>
         /// <param name="Customer">Кто отправил сообщение.</param>
         /// <param name="Adressee">Кто получил сообщение.</param>
-        public void IntoBox(AbstractAgent Customer, MessageArgs Adressee) //помещает сообщения в стек сообщений для конкретного агента
+        public void IntoBox(MessageArgs Adressee) //помещает сообщения в очередь сообщений для конкретного агента
         {
-            if (Users.ContainsKey(Adressee.TheLetter.GetReciever))
+            if (Users.Find(agent => agent == Adressee.TheLetter.GetReciever).Count == 1)
                 {
                     Boxes[Adressee.TheLetter.GetReciever].Enqueue(Adressee.TheLetter);
                 }

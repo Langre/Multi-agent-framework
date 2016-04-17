@@ -14,10 +14,17 @@ namespace MAS.Facilitator
 {
     class Shelf : IFacilitator
     {
+
+        //добавить регистрацию у менеджера соощений
+
         /// <summary>
         /// Каталог с видами агентов.
         /// </summary>
         private List<AgentInfo> Catalog; 
+        public void RegistrateAgent(AbstractAgent NewAgent)
+        {
+
+        }
         public void ProvideInfo()
         {
 

@@ -8,7 +8,7 @@ using MAS.AgentConstruct;
 
 namespace MAS.LocalMSC
 {
-    public delegate void ToPost<MessageArgs>(AbstractAgent Sender, MessageArgs Arg);
+    public delegate void ToPost<MessageArgs>(MessageArgs Arg);
     public delegate Message CheckPost<RecieverAdress>(RecieverAdress ID);
 
     public interface IServicePostman

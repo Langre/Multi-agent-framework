@@ -26,7 +26,7 @@ namespace MAS.Facilitator
         /// </summary>
         public List<string> Languages { get; set; }
         /// <summary>
-        /// Списк услуг, которые может выполнить агент.
+        /// Список услуг, которые может выполнить агент.
         /// </summary>
         public List<ServiceInfo> Services { get; set; }
         /// <summary>

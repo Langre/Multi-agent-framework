@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 using MAS.LocalMSC;
 
@@ -18,8 +18,12 @@ namespace MAS.AgentConstruct
         /// ID агента в системе. 
         /// </summary>   
         public String GetID { get { return ID; } }
+
         private List<AbstractBehaviour> poolOfBehaviours; // заменить словарь на гребаное ДЕРЕВО
-        public List<AbstractBehaviour> Behaviours { get { return poolOfBehaviours; } }
+        /// <summary>
+        /// Возвращает список поведений.
+        /// </summary>
+        public ReadOnlyCollection<AbstractBehaviour> Behaviours { get { return poolOfBehaviours.AsReadOnly(); } }
 
         /// <summary>
         /// Служба передачи сообщения между агентом и почтой.
