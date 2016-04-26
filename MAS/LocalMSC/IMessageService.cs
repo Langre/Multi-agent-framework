@@ -19,20 +19,10 @@ namespace MAS.LocalMSC
         /// <param name="NewCustomer">Новый пользователь.</param>
         void AddClient(AbstractAgent NewCustomer);
         /// <summary>
-        /// Добавить пользователей(агентов).
-        /// </summary>
-        /// <param name="NewCustomers">Список новых пользователей.</param>
-        void AddClients(IEnumerable<AbstractAgent> NewCustomers);
-        /// <summary>
         /// Удаление пользователя(агента).
         /// </summary>
         /// <param name="AgentID"></param>
-        void RemoveCustomer(string AgentID);
-        /// <summary>
-        /// Удаление пользоваталей(агентов)
-        /// </summary>
-        /// <param name="AgentsIDs">Список идентификаторов удаялемых агентов.</param>
-        void RemoveCustomers(IEnumerable<string> AgentsIDs);
+        void RemoveClient(string AgentID);
         /// <summary>
         /// Помещает сообщения в стек сообщений для конкретного агента.
         /// </summary>

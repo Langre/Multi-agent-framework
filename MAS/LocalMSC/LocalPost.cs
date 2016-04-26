@@ -46,27 +46,15 @@ namespace MAS.LocalMSC
                 else
                     throw new Exception(); //доработать исключение
             }
-            catch (Exception alredyExistCatcher)
+            catch
             {
                 //сделать обработку
             }
         }
 
-        public void AddClients(IEnumerable<AbstractAgent> NewCustomers)
-        {
-            foreach(var newCustomer in NewCustomers)
-                AddClient(newCustomer);
-        }
-
         public void RemoveClient(string AgentID)
         {
             Boxes.Remove(AgentID);
-        }
-
-        public void RemoveClients(IEnumerable<string> AgentsIDs)
-        {
-            foreach (var id in AgentsIDs)
-                RemoveClient(id);
         }
 
         /// <summary>
@@ -76,12 +64,17 @@ namespace MAS.LocalMSC
         /// <param name="Adressee">Кто получил сообщение.</param>
         public void IntoBox(MessageArgs Adressee) //помещает сообщения в очередь сообщений для конкретного агента
         {
-            if (Users.Find(agent => agent == Adressee.TheLetter.GetReciever).Count == 1)
-                {
+            try
+            {
+                if (Boxes.ContainsKey(Adressee.TheLetter.GetReciever))
                     Boxes[Adressee.TheLetter.GetReciever].Enqueue(Adressee.TheLetter);
-                }
-            else
-                Console.WriteLine("No such agent {0}", Adressee);
+                else
+                    throw new Exception();
+            }
+            catch
+            {
+                //сделать обработку
+            }
         }
 
         /// <summary>
@@ -92,21 +85,10 @@ namespace MAS.LocalMSC
         /// <returns></returns>
         public Message GiveMessage(AdressArgs ID) //отправляет сообщение, когда агент проверяет почту
         {
-            if (Users.ContainsKey(ID.GetID))
-            {
-                if (Boxes[ID.GetID].Count != 0)
-                    return Boxes[ID.GetID].Dequeue();
-                else
-                {
-                    Console.WriteLine("Box is empty");
-                    return new Message();
-                }
-            }
+            if (Boxes[ID.GetID].Count != 0)
+                return Boxes[ID.GetID].Dequeue();
             else
-            {
-                Console.WriteLine("No such agent");
                 return new Message();
-            }
         }
     }
 }

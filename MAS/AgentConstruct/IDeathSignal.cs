@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace MAS.AgentConstruct
 {
-    public interface IAgentFactory
+    public interface IDeathSignal
     {
-        AbstractAgent NewAgent(String ID);
-        AbstractAgent NewAgent(String ID, AbstractBehaviour NewB);
+        void SignalAboutDeleting(String DeadAgent);
     }
 }

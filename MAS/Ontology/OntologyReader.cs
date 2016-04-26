@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using com.hp.hpl.jena.ontology;
 using com.hp.hpl.jena.rdf.model;
 using com.hp.hpl.jena.query;
@@ -94,35 +95,35 @@ namespace MAS.Ontology
                     Ret.Add(Ontology.getIndividual(R.toString()));
             }
             return Ret;
-        }     
-
-        public void ProvideIndividualFields(string individType)
-        {
-            string typeFieldInd;
-            string cutNameFieldInd;
-            string valueFieldInd;
-            
-            List<Individual> SetOfIndividuals = ProvideSpecificClass(individType);
-            foreach (var indiv in SetOfIndividuals)
-            {
-                StmtIterator iterator = indiv.listProperties(); // для пробега по свойствам сущности.
-                while (iterator.hasNext())
-                {
-                    Statement fieldInd = (Statement)iterator.next(); //получение названия поля                    
-                    if (fieldInd.getObject().isLiteral())
-                    {
-                        typeFieldInd = fieldInd.getLiteral().getDatatype().ToString();
-                        cutNameFieldInd = fieldInd.getPredicate().getLocalName();  //получить имя поля 
-                        valueFieldInd = fieldInd.getLiteral().getLexicalForm().ToString(); //получение значения поля сущности
-                    }
-
-
-                    //var neccFields = fieldsMarked.Where(f => f.GetCustomAttribute<AgentAttribute>(true).Name == temp.getPredicate().getLocalName()); //получение поля, совпадающего с полученным названием temp
-                    //if (neccFields != null)
-                    //    foreach (var field in neccFields)
-                    //        field.SetValue(Anonimus, temp.getLiteral().getLexicalForm().ToString()); //запись t6ty в соответствующее поле anonymous
-                }
-            }
         }
+
+        //public void provideindividualfields(string individtype)
+        //{
+        //    string typefieldind;
+        //    string cutnamefieldind;
+        //    string valuefieldind;
+
+        //    list<individual> setofindividuals = providespecificclass(individtype);
+        //    foreach (var indiv in setofindividuals)
+        //    {
+        //        stmtiterator iterator = indiv.listproperties(); // для пробега по свойствам сущности.
+        //        while (iterator.hasnext())
+        //        {
+        //            statement fieldind = (statement)iterator.next(); //получение названия поля                    
+        //            if (fieldind.getobject().isliteral())
+        //            {
+        //                typefieldind = fieldind.getliteral().getdatatype().tostring();
+        //                cutnamefieldind = fieldind.getpredicate().getlocalname();  //получить имя поля 
+        //                valuefieldind = fieldind.getliteral().getlexicalform().tostring(); //получение значения поля сущности
+        //            }
+
+
+        //            var neccfields = fieldsmarked.where(f => f.getcustomattribute<agentattribute>(true).name == temp.getpredicate().getlocalname()); //получение поля, совпадающего с полученным названием temp
+        //            if (neccfields != null)
+        //                foreach (var field in neccfields)
+        //                    field.setvalue(anonimus, temp.getliteral().getlexicalform().tostring()); //запись t6ty в соответствующее поле anonymous
+        //        }
+        //    }
+        //}
     }
 }

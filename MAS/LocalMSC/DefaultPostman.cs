@@ -48,7 +48,7 @@ namespace MAS.LocalMSC
         /// <param name="Letter">Отправляемое сообщение.</param>
         public void SendToPost(Message Letter)
         {
-            SendLetter(Host, new MessageArgs(Letter));
+            SendLetter(new MessageArgs(Letter));
         }
 
        // public void PackMessage(MType Goal, String Sender, String Reciever, String OntologyName, String MessageText)

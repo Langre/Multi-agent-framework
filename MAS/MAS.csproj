@@ -151,21 +151,21 @@
   <ItemGroup>
     <Compile Include="ACL\Communication.cs" />
     <Compile Include="AgentConstruct\AbstractAgent.cs" />
-    <Compile Include="Facilitator\AgentInfo.cs" />
+    <Compile Include="AgentConstruct\AgentsDeathSignal.cs" />
+    <Compile Include="AgentConstruct\IDeathSignal.cs" />
+    <Compile Include="Facilitator\AddAgentSignal.cs" />
+    <Compile Include="Facilitator\AgentInfoCard.cs" />
+    <Compile Include="Facilitator\IAddAgentSignal.cs" />
     <Compile Include="Facilitator\IFacilitator.cs" />
-    <Compile Include="Facilitator\ServiceInfo.cs" />
     <Compile Include="Ontology\IndividualStructure.cs" />
     <Compile Include="LocalMSC\DefaultPostman.cs" />
     <Compile Include="LocalMSC\IServicePostman.cs" />
     <Compile Include="LocalMSC\IMessageService.cs" />
-    <Compile Include="LocalMSC\MType.cs" />
     <Compile Include="LocalMSC\LocalPost.cs" />
     <Compile Include="LocalMSC\Message.cs" />
     <Compile Include="LocalMSC\MessageArgs.cs" />
     <Compile Include="LocalMSC\AdressArgs.cs" />
     <Compile Include="Ontology\IOntlogyReader.cs" />
-    <Compile Include="SpacemanAgent\Dinner.cs" />
-    <Compile Include="SpacemanAgent\Spaceman.cs" />
     <Compile Include="AgentConstruct\AbstractBehaviour.cs" />
     <Compile Include="Facilitator\Shelf.cs" />
     <Compile Include="Ontology\OntologyReader.cs" />

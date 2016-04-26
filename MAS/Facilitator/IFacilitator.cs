@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 using MAS.AgentConstruct;
+using MAS.LocalMSC;
 
 namespace MAS.Facilitator
 {
     interface IFacilitator
     {
-        void RegistrateAgent(AgentInfo NewAgent);
-        void RegistrateAgents(IEnumerable<AgentInfo> NewAgents);
-        void RemoveAgent(string AgentID);
-        void ProvideInfo();
+        void RegistrateAgent(AbstractAgent NewAgent);
+        void RemoveAgent(String SoonDeadAgent);
+        List<String> ProvideInfo(String IDofAskedAgent, List<String> SrevicesQuery);
     }
 }

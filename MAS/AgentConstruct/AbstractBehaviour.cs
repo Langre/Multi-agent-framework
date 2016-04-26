@@ -16,8 +16,11 @@ namespace MAS.AgentConstruct
         /// </summary>
         public String GetName { get { return Name; } }
 
-        private List<AbstractBehaviour> poolOfBehaviours;
-        public ReadOnlyCollection<AbstractBehaviour> Behaviours { get { return poolOfBehaviours.AsReadOnly(); } }
+        /// <summary>
+        /// Список подповедений.
+        /// </summary>
+        private List<AbstractBehaviour> poolOfSubBehaviours;
+
         /// <summary>
         /// Агент-хозяин.
         /// </summary>
@@ -32,19 +35,20 @@ namespace MAS.AgentConstruct
         {
             this.Name = Name;
             this.Host = Host;
-            poolOfBehaviours = new List<AbstractBehaviour>();
+            poolOfSubBehaviours = new List<AbstractBehaviour>();
         }
 
         /// <summary>
         /// Добавляет поведение в дерево поведений.
         /// </summary>
         /// <param name="NewB">Поведение.</param>
-        public void AddBehaviour(AbstractBehaviour NewB)
+        public void AddSubBehaviour(AbstractBehaviour NewB)
         {
             try
             {
-                if (poolOfBehaviours.FindAll(b => b.GetName == NewB.GetName).Count > 0)
-                    poolOfBehaviours.Add(NewB);
+                if (poolOfSubBehaviours.FindAll(b => b.GetName == NewB.GetName).Count == 0)
+                    poolOfSubBehaviours.Add(NewB);
+                else throw new Exception();
             }
             catch
             {

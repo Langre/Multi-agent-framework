@@ -87,5 +87,9 @@ D:\Multi-agent framework\Multi-agent framework v0.0000002alpha\MAS\obj\Debug\MAS
 D:\Multi-agent framework\Multi-agent framework v0.0000002alpha\MAS\bin\Debug\MAS.exe
 D:\Multi-agent framework\Multi-agent framework v0.0000002alpha\MAS\bin\Debug\MAS.pdb
 D:\Multi-agent framework\Multi-agent framework project\MAS\bin\Debug\MAS.exe.config
-D:\Multi-agent framework\Multi-agent framework project\MAS\obj\Debug\MAS.csprojResolveAssemblyReference.cache
 D:\Multi-agent framework\Multi-agent framework project\MAS\obj\Debug\MAS.csproj.MAS.exe.config
+D:\Multi-agent framework\Multi-agent framework project\MAS\bin\Debug\MAS.exe
+D:\Multi-agent framework\Multi-agent framework project\MAS\bin\Debug\MAS.pdb
+D:\Multi-agent framework\Multi-agent framework project\MAS\obj\Debug\MAS.exe
+D:\Multi-agent framework\Multi-agent framework project\MAS\obj\Debug\MAS.pdb
+D:\Multi-agent framework\Multi-agent framework project\MAS\obj\Debug\MAS.csprojResolveAssemblyReference.cache
