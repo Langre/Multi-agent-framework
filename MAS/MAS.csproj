@@ -128,6 +128,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.VisualStudio.Editors.WCF\v4.0_11.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualStudio.Editors.WCF.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Core" />
@@ -149,14 +153,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ACL\Communication.cs" />
+    <Compile Include="ACL\ICommunication.cs" />
+    <Compile Include="ACL\ICreateContentOfMessage.cs" />
     <Compile Include="AgentConstruct\AbstractAgent.cs" />
-    <Compile Include="AgentConstruct\AgentsDeathSignal.cs" />
-    <Compile Include="AgentConstruct\IDeathSignal.cs" />
-    <Compile Include="Facilitator\AddAgentSignal.cs" />
+    <Compile Include="AgentConstruct\QueryAgentArgs.cs" />
     <Compile Include="Facilitator\AgentInfoCard.cs" />
-    <Compile Include="Facilitator\IAddAgentSignal.cs" />
+    <Compile Include="Facilitator\Observers.cs" />
     <Compile Include="Facilitator\IFacilitator.cs" />
+    <Compile Include="Facilitator\Notifier.cs" />
     <Compile Include="Ontology\IndividualStructure.cs" />
     <Compile Include="LocalMSC\DefaultPostman.cs" />
     <Compile Include="LocalMSC\IServicePostman.cs" />
@@ -179,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

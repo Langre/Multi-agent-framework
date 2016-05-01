@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 using MAS.AgentConstruct;
+using MAS.Facilitator;
 
 namespace MAS.LocalMSC
 {
-    public class LocalPost : IMessageService
+    public class LocalPost : IMessageService, IObserverAgentComponent
     {
         /// <summary>
         /// Почтовые ящики агентов.
@@ -33,15 +34,15 @@ namespace MAS.LocalMSC
             return instance;
         }
 
-        public void AddClient(AbstractAgent NewCustomer)
+        public void GotSignalNewAgent(NewAgentArgs NewCustomer)
         {
             try
             {
-                if (!Boxes.ContainsKey(NewCustomer.GetID))
+                if (!Boxes.ContainsKey(NewCustomer.GetNewAgent.GetID))
                 {
-                    Boxes.Add(NewCustomer.GetID, new Queue<Message>());
-                    NewCustomer.GetPostman.SendLetter += new ToPost<MessageArgs>(IntoBox);
-                    NewCustomer.GetPostman.SendQuery += new CheckPost<AdressArgs>(GiveMessage);
+                    Boxes.Add(NewCustomer.GetNewAgent.GetID, new Queue<Message>());
+                    NewCustomer.GetNewAgent.GetPostman.SendLetter += new ToPost<MessageArgs>(IntoBox);
+                    NewCustomer.GetNewAgent.GetPostman.SendQuery += new CheckPost<AdressArgs>(GiveMessage);
                 }
                 else
                     throw new Exception(); //доработать исключение
@@ -52,9 +53,9 @@ namespace MAS.LocalMSC
             }
         }
 
-        public void RemoveClient(string AgentID)
+        public void GotSignalDeadAgent(DeadAgentArgs DA)
         {
-            Boxes.Remove(AgentID);
+            Boxes.Remove(DA.GetDeadAgent);
         }
 
         /// <summary>

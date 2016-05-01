@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MAS.AgentConstruct
+namespace MAS.ACL
 {
-    public interface IDeathSignal
+    interface ICommunication
     {
-        void SignalAboutDeleting(String DeadAgent);
+        void GetTextMessage(String Content);
     }
 }

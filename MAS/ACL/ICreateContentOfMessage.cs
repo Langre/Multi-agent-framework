@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MAS.ACL
 {
-    class Communication
+    interface ICreateContentOfMessage
     {
 
     }

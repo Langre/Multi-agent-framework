@@ -12,7 +12,7 @@ namespace MAS.Facilitator
     interface IFacilitator
     {
         void RegistrateAgent(AbstractAgent NewAgent);
-        void RemoveAgent(String SoonDeadAgent);
-        List<String> ProvideInfo(String IDofAskedAgent, List<String> SrevicesQuery);
+        void RemoveAgent(DeadAgentArgs SoonDeadAgent);
+        List<String> ProvideInfo(QueryAgentArgs QueryParams);
     }
 }

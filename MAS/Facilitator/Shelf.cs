@@ -19,21 +19,26 @@ namespace MAS.Facilitator
         /// Каталог с видами агентов.
         /// </summary>
         private List<AgentInfoCard> Catalog;
-        private IAddAgentSignal addASignal;
+        private IAgentStateObserver Notifier;
 
-        public Shelf(IAddAgentSignal addASignal)
+        public Shelf(IAgentStateObserver Notifier)
         {
             Catalog = new List<AgentInfoCard>();
-            this.addASignal = addASignal;
+            this.Notifier = Notifier;
         }
+
+        public IAgentStateObserver GetNotifier { get { return Notifier; } }
+
         public void RegistrateAgent(AbstractAgent NewAgent)
         {
             try
             {
                 if (NewAgent.GetID != String.Empty && !Catalog.Exists(agent => agent.GetAgentsID == NewAgent.GetID))
-                {
-                    Catalog.Add(new AgentInfoCard(NewAgent));
-                    addASignal.AddNewAgentToAll(NewAgent);                    
+                {                    
+                    Catalog.Add(new AgentInfoCard(NewAgent));                    
+                    NewAgent.SendQuery += this.ProvideInfo;
+                    NewAgent.TellAboutDeath += RemoveAgent;
+                    Notifier.ThrowNewAgentSignal(NewAgent);
                 }
                 else
                     throw new Exception();
@@ -44,12 +49,15 @@ namespace MAS.Facilitator
             }
         }
 
-        public void RemoveAgent(String DeadAgent)
+        public void RemoveAgent(DeadAgentArgs DeadAgent)
         {
             try
             {
-                if (DeadAgent != String.Empty && Catalog.Exists(agent => agent.GetAgentsID == DeadAgent))
-                    Catalog.RemoveAll(card => card.GetAgentsID == DeadAgent);
+                if (DeadAgent.GetDeadAgent != String.Empty && Catalog.Exists(agent => agent.GetAgentsID == DeadAgent.GetDeadAgent))
+                {
+                    Catalog.RemoveAll(card => card.GetAgentsID == DeadAgent.GetDeadAgent);
+                    Notifier.ThrowDeadAgentSignal(DeadAgent);
+                }
                 else
                     throw new Exception();
             }
@@ -64,20 +72,21 @@ namespace MAS.Facilitator
         /// </summary>
         /// <param name="QueryParameters">Парпметры для поиска</param>
         /// <returns>Список найденных агентов</returns>
-        public List<String> ProvideInfo(String IDofAskedAgent, List<String> ServicesQuery)
+        public List<String> ProvideInfo(QueryAgentArgs QueryParams)
         {
-           AgentInfoCard agentWhoAsked = Catalog.SingleOrDefault(agent => agent.GetAgentsID == IDofAskedAgent);
+           AgentInfoCard agentWhoAsked = Catalog.SingleOrDefault(agent => agent.GetAgentsID == QueryParams.GetIDOfAskedAgent);
            List<String> suitableAgents = new List<String>();
            foreach(var agentCard in Catalog)
            {
                if (agentCard != agentWhoAsked)
                {
-                   if(agentCard.GetServices.All(service => ServicesQuery.Contains(service)) && agentCard.GetLanguages.Intersect(agentWhoAsked.GetLanguages).Any())
+                   if (agentCard.GetServices.All(service => QueryParams.GetQueryServices.Contains(service)) && agentCard.GetLanguages.Intersect(agentWhoAsked.GetLanguages).Any()
+                                                                                     && agentCard.GetOntologies.All(ontology => QueryParams.GetQueryOntologies.Contains(ontology)))
                        suitableAgents.Add(agentCard.GetAgentsID); 
                }
            }
-                     
-            return suitableAgents;
+
+           return suitableAgents;
         }    
     }
 }

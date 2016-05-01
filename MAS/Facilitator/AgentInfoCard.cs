@@ -42,10 +42,10 @@ namespace MAS.Facilitator
         public AgentInfoCard(AbstractAgent Agent)
         {
             this.AgentsID = Agent.GetID;
-            this.Languages = new List<String>(Agent.GetLanguages);
-            this.Ontologies = new List<String>(Agent.GetOntologies);
-            this.Protocols = new List<String>(Agent.GetProtocols);
-            this.Services = new List<String>(Agent.GetServices);
+            this.Languages = new List<String>(Agent.Languages);
+            this.Ontologies = new List<String>(Agent.Ontologies);
+            this.Protocols = new List<String>(Agent.Protocols);
+            this.Services = new List<String>(Agent.Services);
         }
     }
 }

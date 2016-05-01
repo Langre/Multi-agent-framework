@@ -93,3 +93,5 @@ D:\Multi-agent framework\Multi-agent framework project\MAS\bin\Debug\MAS.pdb
 D:\Multi-agent framework\Multi-agent framework project\MAS\obj\Debug\MAS.exe
 D:\Multi-agent framework\Multi-agent framework project\MAS\obj\Debug\MAS.pdb
 D:\Multi-agent framework\Multi-agent framework project\MAS\obj\Debug\MAS.csprojResolveAssemblyReference.cache
+D:\Multi-agent framework\Multi-agent framework project\MAS\bin\Debug\Newtonsoft.Json.dll
+D:\Multi-agent framework\Multi-agent framework project\MAS\bin\Debug\Newtonsoft.Json.xml
