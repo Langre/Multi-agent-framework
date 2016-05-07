@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="b9363985-e057-4191-a993-e86306b64e53"
+  name="ontology"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="11462145-1f03-4d12-a7c2-f6b43014d30f"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3Dcom.hp.hpl.jena.ontology"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="a65dea54-baed-45b8-98a8-66f9540d2924"
+        name="Individual"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="b3ea3558-1ee1-4689-bd85-62f221d9d4b0"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FD:%2FMulti-agent framework%2FMulti-agent framework project%2FMAS%2Fbin%2FDebug%2FLinkedDataTools.JenaDotNet.dll&quot; Namespace%3Dcom.hp.hpl.jena.ontology Type%3DIndividual"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="37e9d5d4-5fc0-4ae0-bb53-0b9c97b4264c"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e77fe138-b8f3-48c7-b085-3fa22f19932e">
+                <propertyInstance
+                  Id="ee4c2a6f-e45e-4858-be5e-10b464702b01"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="000c0a86-5204-4ea5-8895-4cd6a8727b4f">
+                <propertyInstance
+                  Id="ab422dc3-0506-498c-ae26-90bc579e84dd"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2dde8682-9030-48d9-9697-b74eaf48a9c6">
+                <propertyInstance
+                  Id="1b2a35fc-a2d4-4f04-bd1e-d21f69d3c1a3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6c1e2820-728a-4706-a6a1-614604ee96d7">
+                <propertyInstance
+                  Id="3cba668a-8df0-4f17-8228-002c730db5e2"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="47844474-1bc4-4310-b2d7-024f0b8c2adb"
+        name="OntDocumentManager"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="cc15d0d6-499f-45e8-afde-3cb221579e95"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FD:%2FMulti-agent framework%2FMulti-agent framework project%2FMAS%2Fbin%2FDebug%2FLinkedDataTools.JenaDotNet.dll&quot; Namespace%3Dcom.hp.hpl.jena.ontology Type%3DOntDocumentManager"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d2c0360c-18ae-4f52-a15b-81701f09ba2c"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="224ce090-9bbd-4b86-8e87-6c60fc89ea4d">
+                <propertyInstance
+                  Id="d2adc813-7e8c-49b3-a01a-3ada918384e7"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b23f8266-140e-4d79-92b8-f8917e27cef7">
+                <propertyInstance
+                  Id="613ba6b1-61c4-4029-957a-0d81f5b1f30d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="781cb4f2-39fb-4062-a80a-c70c0bd3b660">
+                <propertyInstance
+                  Id="babaded7-7eef-456d-9c66-689e6fdb17c6"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2d952db1-616e-4241-8d02-0bc8dd615a84">
+                <propertyInstance
+                  Id="b02397b5-70be-4653-963a-84b332f9f641"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cb353f2d-6929-485f-a6ef-3f0218cdf298">
+                <propertyInstance
+                  Id="3f92f461-c772-47f2-a1e7-37445ec5260a"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="afe2b9f3-489a-48bb-8e73-abf868dda3a6"
+        name="OntModel"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="7300abc4-b1cb-4a3b-aee1-df5f0c72dcbd"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FD:%2FMulti-agent framework%2FMulti-agent framework project%2FMAS%2Fbin%2FDebug%2FLinkedDataTools.JenaDotNet.dll&quot; Namespace%3Dcom.hp.hpl.jena.ontology Type%3DOntModel"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="780712e4-7780-4cfc-bfd5-cdb70155fa66"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f2cfbaba-8069-498b-b92c-950aeb681db7">
+                <propertyInstance
+                  Id="e7b4749d-f717-461a-8e8d-2a33163ef101"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="073263ba-59f2-49a5-8fcf-fcb3d1e3ab9e">
+                <propertyInstance
+                  Id="003fd266-9fb9-4b8b-96bc-07a5d6f164a2"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="257b83ae-0364-4c98-ad7e-c9e997041466">
+                <propertyInstance
+                  Id="b5867da3-bbe8-4e42-8289-0476f22f8ab3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0596bd98-586f-4c20-9c1a-af2a406afd1f">
+                <propertyInstance
+                  Id="3e833b10-6791-46cf-8a6c-0c1fcd01b9b8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

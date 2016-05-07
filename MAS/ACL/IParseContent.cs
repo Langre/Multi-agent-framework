@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MAS.ACL
 {
-    interface ICreateContentOfMessage
+    interface IParseContent
     {
-
+        void GetTextMessage(String Content);
     }
 }

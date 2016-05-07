@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="55031fcb-5ac1-4be2-b7ab-84464eba9586"
+  name="ACL"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="c33cb390-9181-447f-9927-8c8303541822"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMAS.ACL"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="c100fd5a-882c-47ed-8b19-5c319e593ab1"
+        name="ICreateContentOfMessage"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="93e42a78-de33-4cad-bc83-689147051d34"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FD:%2FMulti-agent framework%2FMulti-agent framework project%2FMAS%2Fbin%2FDebug%2FMAS.exe&quot; Namespace%3DMAS.ACL Type%3DICreateContentOfMessage"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="76a1aa54-53a6-48a8-bfe4-8edf1978b0b4"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f6747d7d-97c5-4af7-afed-4ba2b4494c7b">
+                <propertyInstance
+                  Id="9236a71d-3e37-4f91-ac74-f54169bba097"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="05b4e51b-4649-46a0-a05b-f18469a5783d">
+                <propertyInstance
+                  Id="e72df3ce-7b4b-4729-86c8-a78d9c5e8e75"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c091ded0-8339-45d2-bc01-86d070797baf">
+                <propertyInstance
+                  Id="d0a32a6a-1677-493f-aab6-7c8920a8071b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="29cf25fd-e6eb-474a-b0e3-94057d9711a0">
+                <propertyInstance
+                  Id="a24db230-23b7-490e-af50-aea6b575fdee"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="84fe9103-65f0-43a4-9263-be572097152c"
+        name="ICommunication"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="c6a674ae-369e-4ed9-b624-58ca365805ca"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FD:%2FMulti-agent framework%2FMulti-agent framework project%2FMAS%2Fbin%2FDebug%2FMAS.exe&quot; Namespace%3DMAS.ACL Type%3DICommunication"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b094b57c-4afe-455b-b211-1f00f7678a8f"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0b231d9f-679c-4b68-a80e-7170af38c219">
+                <propertyInstance
+                  Id="6ab203e8-0856-4d92-a312-b3d16ca0deaa"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="51784f2b-b8e3-4266-b061-9ac16747d44e">
+                <propertyInstance
+                  Id="7eae0235-0f54-4edf-9f59-d31af6eeaa44"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5f44ddd5-ac57-42e0-90eb-f96159676cda">
+                <propertyInstance
+                  Id="ed7f6532-d5c8-4525-9987-3dc604f0d3ed"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="65886ee3-84f0-4f96-81eb-35da529b0490">
+                <propertyInstance
+                  Id="13c8b3fe-cbb3-42fe-8f90-2ec46e881eeb"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperations>
+          <operation
+            Id="09bd165a-c703-40a7-8ff3-356bcaf029f3"
+            name="GetTextMessage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="530d41cf-ea89-4f4d-9a13-e2b05a190fb3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FD:%2FMulti-agent framework%2FMulti-agent framework project%2FMAS%2Fbin%2FDebug%2FMAS.exe&quot; Namespace%3DMAS.ACL Type%3DICommunication Member%3D(Name%3DGetTextMessage OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="eb1b43b9-7d73-4494-8168-5599ab01042c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5e698cbc-807b-487d-a15c-b2bd9ef0885f">
+                    <propertyInstance
+                      Id="2afe7d71-dfbd-4ce3-823d-6f9553d59883"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4caa2027-8f9a-419c-95bb-2119700a3687">
+                    <propertyInstance
+                      Id="090a0144-3a0b-4c12-97a2-fe87ee36004d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b91db22e-9b34-436f-866a-355ee924b14e">
+                    <propertyInstance
+                      Id="bad94eea-ddd5-4b39-9151-c64fa54de701"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="786d9b66-401d-46ef-8017-1923ec0a1ad6">
+                    <propertyInstance
+                      Id="94313e9a-025b-4838-9f25-ce1b48228b9b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="09eeb4d0-134e-4c19-9be4-5a03fa2fce40">
+                    <propertyInstance
+                      Id="e0c02f36-994d-4087-929f-e16a9cc6e8fa"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="607f33e1-5808-470f-9088-cc06c0b1ca6a">
+                    <propertyInstance
+                      Id="aafa22af-fdc0-44b2-b4d3-79e35fdbaf0e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f4d0adcb-906c-4b6b-8a77-42a6cf69b95d"
+                  name="Content"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="bd2d77dc-8983-4503-a991-d2669ad0876a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FD:%2FMulti-agent framework%2FMulti-agent framework project%2FMAS%2Fbin%2FDebug%2FMAS.exe&quot; Namespace%3DMAS.ACL Type%3DICommunication Member%3D(Name%3DGetTextMessage OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DContent"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

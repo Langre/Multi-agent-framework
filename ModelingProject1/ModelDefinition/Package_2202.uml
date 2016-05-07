@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="5fd5e4f5-6898-4679-83fc-4b3dc0e69c28"
+  name="MAS"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="87d54ed4-a8c1-43c5-929d-5ccffcd505c2"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMAS"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="55031fcb-5ac1-4be2-b7ab-84464eba9586"
+        LastKnownName="ACL"
+        LastKnownLocation="Package1_2202.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="f2c10c87-6316-4999-9f4d-44eed1cf3216"
+        LastKnownName="Facilitator"
+        LastKnownLocation="Package2_2202.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="65d9c083-a1d2-45c1-8597-39e207e6f52c"
+        LastKnownName="LocalMSC"
+        LastKnownLocation="Package3_2202.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c867be10-595b-4574-aff8-4ad6d18a37b7"
+        LastKnownName="AgentConstruct"
+        LastKnownLocation="Package4_2202.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="56d84edf-d868-41e8-8a7d-c143a6ab8d17"
+        LastKnownName="Ontology"
+        LastKnownLocation="Package8_2202.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="01d29567-4923-4909-a49c-f375764c5569"
+        LastKnownName="Properties"
+        LastKnownLocation="Package16_2202.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

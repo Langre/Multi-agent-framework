@@ -20,11 +20,20 @@ namespace MAS.Facilitator
         /// </summary>
         private List<AgentInfoCard> Catalog;
         private IAgentStateObserver Notifier;
+        private static Shelf instance;
 
-        public Shelf(IAgentStateObserver Notifier)
+        private Shelf(IAgentStateObserver Notifier)
         {
             Catalog = new List<AgentInfoCard>();
             this.Notifier = Notifier;
+        }
+
+        public static Shelf GetInstance(IAgentStateObserver Notifier)
+        {
+            if (instance == null)
+                lock (typeof(Shelf)) // обязательность выполнения блока для исключения создание блока при многопоточности
+                    instance = new Shelf(Notifier);
+            return instance;
         }
 
         public IAgentStateObserver GetNotifier { get { return Notifier; } }

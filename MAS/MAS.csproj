@@ -153,15 +153,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ACL\ICommunication.cs" />
-    <Compile Include="ACL\ICreateContentOfMessage.cs" />
+    <Compile Include="ACL\IParseContent.cs" />
+    <Compile Include="ACL\ICreateContent.cs" />
+    <Compile Include="ACL\Schema.cs" />
+    <Compile Include="ACL\Secretary.cs" />
     <Compile Include="AgentConstruct\AbstractAgent.cs" />
     <Compile Include="AgentConstruct\QueryAgentArgs.cs" />
     <Compile Include="Facilitator\AgentInfoCard.cs" />
     <Compile Include="Facilitator\Observers.cs" />
     <Compile Include="Facilitator\IFacilitator.cs" />
     <Compile Include="Facilitator\Notifier.cs" />
-    <Compile Include="Ontology\IndividualStructure.cs" />
+    <Compile Include="Ontology\IndividualAttribute.cs" />
     <Compile Include="LocalMSC\DefaultPostman.cs" />
     <Compile Include="LocalMSC\IServicePostman.cs" />
     <Compile Include="LocalMSC\IMessageService.cs" />
